@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'app'>
+        <p v-if = 'ok'>表白成功</p>
+        <p v-else>表白失败</p>
+        <button @click = 'haha'>点击切换</button>
+        <p v-show = 'ok'>结婚成功</p>
+        <p v-show = '!ok'>结婚失败</p>
+        <p></p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.common.dev.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data(){
+                return{
+                    ok:true
+                }
+            },
+            methods: {
+                haha(){
+                    this.ok = !this.ok
+                }
+            },
+        })
+    </script>
+</body>
+</html>

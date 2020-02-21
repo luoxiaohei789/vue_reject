@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_HelloWorld</title>
+</head>
+<body>
+
+<!--
+  1. 引入Vue.js
+  2. 创建Vue对象
+    el : 指定根element(选择器)
+    data : 初始化数据(页面可以访问)
+  3. 双向数据绑定 : v-model
+  4. 显示数据 : {{xxx}}
+  5. 理解vue的mvvm实现
+-->
+ <div id = 'test'>
+   <input type="text" v-model = 'msg'>
+   <p>Hello  {{msg}}</p>
+ </div>
+ <div id = 'test2'>
+   <p>世界你好{{msg}}</p>
+ </div>
+ <script src="https://cdn.bootcss.com/vue/2.6.11/vue.common.dev.js"></script>
+ <script>
+   new Vue({
+     el:'#test',
+     data:{
+       msg:'shijiezhenhao'
+     }
+   })
+  let vm =  new Vue({
+     el:'#test2',
+     data:{
+       msg:'shijiezhenhao'
+     }
+   })
+   setTimeout(() => {
+     vm.msg = '罗小黑的罗小白'
+   }, 3000);
+ </script>
+</body>
+</html>
