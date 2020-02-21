@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'app'>
+        <input type="text" v-model = 'msg'>
+        <p>hello {{msg}}</p>
+    </div>
+    <div class = 'test'>
+        <p>世界 {{msg}}</p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.common.dev.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'world'
+            }
+        })
+
+        let vm = new Vue({
+            el:".test",
+            data:{
+                msg:'你好'
+            }
+        })
+        setTimeout(() => {
+            vm.msg = '罗小黑的罗小白'
+        }, 5000);
+    </script>
+</body>
+</html>

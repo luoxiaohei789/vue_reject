@@ -15,10 +15,28 @@
 -->
 
 <div id="demo">
+  <p v-if = 'ok'>成功了</p>
+  <p v-else>失败了</p>
+  <button @click = 'toggle'>点击切换</button>
+
+  <p v-show = 'ok'>就是成功了</p>
+  <p v-show = '!ok'>就是失败了</p>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.6.11/vue.common.dev.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#demo',
+    data:{
+      ok:true
+    },
+    methods:{
+      toggle(){
+        this.ok = !this.ok
+      }
+    }
+  })
 </script>
 </body>
 </html>

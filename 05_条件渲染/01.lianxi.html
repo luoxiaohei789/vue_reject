@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = 'app'>
-        <p v-if = 'ok'>表白成功</p>
-        <p v-else>表白失败</p>
-        <button @click = 'toggle'>点击切换</button>
-        <p v-show = 'ok'>结婚成功</p>
-        <p v-show = '!ok'>结婚失败</p>
-        <p></p>
+    <div id="app">
+        <p v-if = 'ok'>成功</p>
+        <p v-else>失败</p>
+        <button @click = 'toggle'>点击切换数据</button>
+        <!-- if else  和 show的区别 是 if else 直接把dom删除  而show 是通过style样式中的 display:none来把页面隐藏的-->
+        <p v-show = 'ok'>成功</p>
+        <p v-show = '!ok'>失败</p>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.11/vue.common.dev.js"></script>
     <script>
